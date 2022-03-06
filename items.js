@@ -18,11 +18,11 @@ let imageIndex = 0;
 
 for(let i = 1; i <= 80; i++){
     let item = {
-        id: i,
-        title: `Post ${i}`,
-        date: `${i < 10 ? 0 : ''}${i}/10/2021 `,
-        image: images[imageIndex]
-    }
+      id: i,
+      title: `Title Post ${i}`,
+      date: `${i < 10 ? 0 : ""}${i}/10/2021 `,
+      image: images[imageIndex],
+    };
     posts.push(item);
     imageIndex++;
     if (imageIndex > images.length - 1) imageIndex = 0;
