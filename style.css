@@ -11,40 +11,40 @@
   color: rgb(255, 255, 255);
 }
 
-.blue{
-  color: #aed8ea;;
+.blue {
+  color: #aed8ea;
 }
 
-header{
-background-color: transparent;
-margin-bottom: -100px;
+header {
+  background-color: transparent;
+  margin-bottom: -100px;
 }
 
-.text-center{
+.text-center {
   text-align: center;
 }
-.header{
+.header {
   padding: 17px;
 }
-#logoImg{
+#logoImg {
   width: 92px;
   height: 32px;
   filter: invert();
 }
-.logo{
+.logo {
   width: 20%;
   min-width: 330px;
   display: flex;
   gap: 20px;
 }
 
-nav{
+nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.uploadBtn{
+.uploadBtn {
   width: 120px;
   background-color: #20b471;
   border-radius: 3px;
@@ -56,116 +56,138 @@ nav{
   font-size: 15px;
   cursor: pointer;
 }
-#btn-logo{
+#btn-logo {
   width: 22px;
 }
-.searchBar{
-   width: 55%;
-   max-width: 550px;
-   text-align: center;
+.searchBar {
+  width: 55%;
+  max-width: 550px;
+  text-align: center;
+  position: relative;
 }
-.searchInput{
-    width: 100%;
-    background: hsla(0,0%,100%,.25);
-    border: 1px solid transparent;
-    padding: 8px 35px 7px 10px;
-    border-radius: 3px;
-    outline: 0 none;
-    opacity: .8;
-    min-height: 36px;
-    font-size: 16px;
-    font-weight: 600;
-    letter-spacing: .4px;
-    color: #fff;
-    text-shadow: inherit;
-    -webkit-text-fill-color: inherit;
+.searchInput {
+  width: 100%;
+  background: hsla(0, 0%, 100%, 0.25);
+  border: 1px solid transparent;
+  padding: 8px 35px 7px 10px;
+  border-radius: 3px;
+  outline: 0 none;
+  opacity: 0.8;
+  min-height: 36px;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  color: #fff;
+  text-shadow: inherit;
+  -webkit-text-fill-color: inherit;
 }
 ::placeholder {
   color: rgb(189, 189, 189);
 }
-.searchBtn{
+.searchBtn {
   position: absolute;
-    margin-left: -30px;
-    margin-top: 8px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
+  margin-left: -30px;
+  margin-top: 8px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
 }
-.account{
-   width: 25%;
+.account {
+  width: 25%;
 }
 .EmeraldButton {
-    background: #6432f9;
-    box-shadow: 0 3px 4px rgb(0 0 0 / 12%);
-   padding: 0px 10px 0px 10px;
-    overflow: hidden;
-    margin: auto 0;
-    line-height: 35px;
-    text-decoration: none;
-    border-radius: 3px;
-      font-size: 15px;
-    font-weight: 600;
+  background: #6432f9;
+  box-shadow: 0 3px 4px rgb(0 0 0 / 12%);
+  padding: 0px 10px 0px 10px;
+  overflow: hidden;
+  margin: auto 0;
+  line-height: 35px;
+  text-decoration: none;
+  border-radius: 3px;
+  font-size: 15px;
+  font-weight: 600;
 }
 
-.account-div{
+.account-div {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.account-icons{
+.account-icons {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 10px;
 }
-.account-icons svg{
+.account-icons svg {
   width: 30px;
   height: 25px;
 }
 
-.userDetails{
+.userDetails {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 10px;
 }
-#userLogo{
-    width: 37px;
-    border-radius: 50%;
+#userLogo {
+  width: 37px;
+  border-radius: 50%;
 }
-.banner{
+#input-dropDown {
+  min-height: 70px;
+  max-height: 250px;
+  overflow-y: scroll;
+  width: 100%;
+  background-color: white;
+  color: black;
+  position: absolute;
+  flex-direction: column;
+  border-radius: 2px;
+  left: 0;
+  top: 36.6;
+  display: none;
+}
+#input-dropDown div {
+  color: black;
+  text-align: left;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  font-weight: bolder;
+  cursor: pointer;
+}
+.banner {
   padding: 110px 0px 150px 0px;
-   background-image: url("./img/banner.png");
+  background-image: url("./img/banner.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
-.banner h2{
+.banner h2 {
   font-size: 24px;
   font-weight: 900;
 }
-.explore-tags{
+.explore-tags {
   width: 88%;
   margin: auto;
 }
-.tag-cards{
-    display: grid;
-    align-content: center;
-    grid-template-columns: 230px repeat(9, 1fr);
-    gap: 12px;
-    text-align: center;
-   
+.tag-cards {
+  display: grid;
+  align-content: center;
+  grid-template-columns: 230px repeat(9, 1fr);
+  gap: 12px;
+  text-align: center;
 }
-.tags-info{
+.tags-info {
   display: flex;
   justify-content: space-between;
   padding: 10px 0px;
 }
-.tags-info h4{
-  color: rgb(181, 181, 181);;
+.tags-info h4 {
+  color: rgb(181, 181, 181);
 }
 
-.card-body{
+.card-body {
   height: 130px;
   display: flex;
   justify-content: center;
@@ -174,26 +196,24 @@ nav{
   border-radius: 3px;
   background-size: cover;
 }
-.card{
+.card {
   padding: 12px;
   width: 100%;
   /* background-color: rgb(38, 96, 110); */
 }
-.card p{
+.card p {
   font-size: 11px;
   font-weight: 600;
   line-height: 25px;
   color: rgb(216, 216, 216);
   letter-spacing: 1px;
 }
-.main{
-
+.main {
   position: relative;
-
 }
-.wrapper{
+.wrapper {
   position: absolute;
-    background-color: #2f3035;
+  background-color: #2f3035;
 }
 .container {
   position: relative;
@@ -210,15 +230,14 @@ nav{
   display: flex;
   flex-direction: column;
   gap: 20px;
- 
 }
 
 .post {
   position: relative;
   overflow: hidden;
- box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   background: #474a51;
-   border-radius: 4px;
+  border-radius: 4px;
 }
 
 img {
@@ -247,30 +266,31 @@ img {
   cursor: pointer;
 }
 
-.post h4{
+.post h4 {
   font-size: 14px;
   font-weight: 600;
   text-transform: capitalize;
 }
 
-.postDivTitle{
+.postDivTitle {
   padding: 5px 20px 15px 20px;
 }
 
-.postDivComments{
+.postDivComments {
   display: flex;
   justify-content: space-between;
   margin-top: 15px;
   font-size: 13px;
   font-weight: 600;
-
-} 
-.postDivComments path{
+}
+.postDivComments path {
   color: #969696;
   cursor: pointer;
 }
 
- .likes,.comments,.views{
+.likes,
+.comments,
+.views {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -278,18 +298,22 @@ img {
   color: #969696;
   z-index: 99;
 }
-.likes:hover, .comments:hover,.views:hover{
+.likes:hover,
+.comments:hover,
+.views:hover {
   color: white;
   cursor: pointer;
 }
-.likes path:hover, .comments path:hover,.views path:hover{
+.likes path:hover,
+.comments path:hover,
+.views path:hover {
   color: white;
   cursor: pointer;
 }
 
-#upvote>path:hover{
-color: rgb(7, 189, 7);
+#upvote > path:hover {
+  color: rgb(7, 189, 7);
 }
-#downvote>path:hover{
-color: red;
+#downvote > path:hover {
+  color: red;
 }

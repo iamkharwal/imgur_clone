@@ -1,6 +1,12 @@
 /** @format */
 let id;
+const dropDown = document.getElementById("input-dropDown");
+document.querySelector("body").onclick = () => {
+  dropDown.style.display = "none";
+};
 document.getElementById("searchBar").addEventListener("keypress", (e) => {
+  dropDown.style.display = "flex";
+  dropDown.innerHTML = "";
   clearInterval(id);
   id = setTimeout(async () => {
     const res = await fetch(
@@ -22,12 +28,17 @@ document.getElementById("searchBar").addEventListener("keypress", (e) => {
         ups: `${e.ups}`,
         views: `${e.views}`,
       };
+      let title = document.createElement("div");
+      title.textContent = e.title;
+      dropDown.append(title);
       posts.push(item);
     });
-  
-    showData(posts);
     console.log("showData is here");
-  }, 800);
+    if (e.keyCode === 13) {
+      dropDown.style.display = "none";
+      showData(posts);
+    }
+  }, 400);
 });
 
 const imgurData = async () => {
