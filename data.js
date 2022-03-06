@@ -1,6 +1,4 @@
-/** @format */
-
-export default [
+ [
   {
     id: "Zzp3GR4",
     title: "Going...down?",

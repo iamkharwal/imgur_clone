@@ -1,31 +1,85 @@
 /** @format */
+let id;
+document.getElementById("searchBar").addEventListener("keypress", (e) => {
+  clearInterval(id);
+  id = setTimeout(async () => {
+    const res = await fetch(
+      `https://img-clone.herokuapp.com/data?q=${e.target.value}`
+    );
+    const data = await res.json();
+    let posts = [];
 
-import posts from "./items.js";
+    data.forEach((e) => {
+      if (!e.images) {
+        return;
+      }
+      console.log(e);
+      let item = {
+        id: e.id,
+        title: `${e.title}`,
+        image: `${e?.images[0]?.link}`,
+        comment: `${e.comment_count}`,
+        ups: `${e.ups}`,
+        views: `${e.views}`,
+      };
+      posts.push(item);
+    });
+  
+    showData(posts);
+    console.log("showData is here");
+  }, 800);
+});
 
-const container = document.querySelector(".container");
+const imgurData = async () => {
+  const res = await fetch(
+    "https://img-clone.herokuapp.com/data?_page=1&_limit=20"
+  );
+  const data = await res.json();
+  let posts = [];
 
-function generateMasonryGrid(columns, posts) {
-  container.innerHTML = "";
+  data.forEach((e) => {
+    if (!e.images) {
+      return;
+    }
+    let item = {
+      id: e.id,
+      title: `${e.title}`,
+      image: `${e?.images[0]?.link}`,
+      comment: `${e.comment_count}`,
+      ups: `${e.ups}`,
+      views: `${e.views}`,
+    };
+    posts.push(item);
+  });
+  showData(posts);
+};
+imgurData();
 
-  let columnWrappers = {};
+const showData = (posts) => {
+  const container = document.querySelector(".container");
 
-  for (let i = 0; i < columns; i++) {
-    columnWrappers[`column${i}`] = [];
-  }
+  function generateMasonryGrid(columns, posts) {
+    container.innerHTML = "";
 
-  for (let i = 0; i < posts.length; i++) {
-    const column = i % columns;
-    columnWrappers[`column${column}`].push(posts[i]);
-  }
+    let columnWrappers = {};
 
-  let output = "";
-  for (let i = 0; i < columns; i++) {
-    let columnPosts = columnWrappers[`column${i}`];
-    let div = document.createElement("div");
-    div.classList.add("column");
+    for (let i = 0; i < columns; i++) {
+      columnWrappers[`column${i}`] = [];
+    }
 
-    columnPosts.forEach((post) => {
-      output = ` 
+    for (let i = 0; i < posts.length; i++) {
+      const column = i % columns;
+      columnWrappers[`column${column}`].push(posts[i]);
+    }
+
+    let output = "";
+    for (let i = 0; i < columns; i++) {
+      let columnPosts = columnWrappers[`column${i}`];
+      let div = document.createElement("div");
+      div.classList.add("column");
+
+      columnPosts.forEach((post) => {
+        output = ` 
            <div class="post"><img src=${post.image}>
                 <div class="overlay"></div>
                 <div class="postDivTitle">
@@ -38,36 +92,37 @@ function generateMasonryGrid(columns, posts) {
                 </div>
             </div>`;
 
-      div.innerHTML += output;
-    });
-    container.appendChild(div);
+        div.innerHTML += output;
+      });
+      container.appendChild(div);
+    }
   }
-}
 
-let previousScreenSize = window.innerWidth;
+  let previousScreenSize = window.innerWidth;
 
-window.addEventListener("resize", () => {
-  if (window.innerWidth < 600 && previousScreenSize >= 600) {
+  window.addEventListener("resize", () => {
+    if (window.innerWidth < 600 && previousScreenSize >= 600) {
+      generateMasonryGrid(1, posts);
+    } else if (
+      window.innerWidth >= 600 &&
+      window.innerWidth < 1000 &&
+      (previousScreenSize < 600 || previousScreenSize >= 1000)
+    ) {
+      generateMasonryGrid(2, posts);
+    } else if (window.innerWidth >= 1000 && previousScreenSize < 1000) {
+      generateMasonryGrid(5, posts);
+    }
+    previousScreenSize = window.innerWidth;
+  });
+
+  if (previousScreenSize < 600) {
     generateMasonryGrid(1, posts);
-  } else if (
-    window.innerWidth >= 600 &&
-    window.innerWidth < 1000 &&
-    (previousScreenSize < 600 || previousScreenSize >= 1000)
-  ) {
+  } else if (previousScreenSize >= 600 && previousScreenSize < 1000) {
     generateMasonryGrid(2, posts);
-  } else if (window.innerWidth >= 1000 && previousScreenSize < 1000) {
+  } else {
     generateMasonryGrid(5, posts);
   }
-  previousScreenSize = window.innerWidth;
-});
-
-if (previousScreenSize < 600) {
-  generateMasonryGrid(1, posts);
-} else if (previousScreenSize >= 600 && previousScreenSize < 1000) {
-  generateMasonryGrid(2, posts);
-} else {
-  generateMasonryGrid(5, posts);
-}
+};
 
 //   let postDiv = document.createElement("div");
 //   postDiv.classList.add("post");
