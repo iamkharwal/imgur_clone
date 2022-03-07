@@ -199,7 +199,13 @@ nav {
   text-decoration: none;
   border-radius: 3px;
   background-size: cover;
+  transition: 0.4s;
 }
+.card-body:hover{
+    box-shadow: rgba(31, 247, 12, 0.16) 0px 3px 6px, rgba(3, 255, 20, 0.23) 0px 3px 6px;
+transform: translateY(-10px);
+}
+
 .card {
   padding: 12px;
   width: 100%;
