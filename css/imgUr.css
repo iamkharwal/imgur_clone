@@ -1,0 +1,146 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  background-color: #141518;
+  font-family: "Open Sans", sans-serif;
+}
+a {
+  text-decoration: none !important;
+  color: white !important;
+}
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+.BackToImgur {
+  color: #d9d9d9;
+  padding: 20px;
+  box-sizing: border-box;
+  font-size: 13px;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.BackToImgur .cir {
+  background-color: #d9d9d9;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+}
+.BackToImgur .Rect {
+  background-color: #d9d9d9;
+  height: 16px;
+  width: 5px;
+  border-radius: 15px;
+}
+.BackToImgur a {
+  text-decoration: none !important;
+  color: #d9d9d9 !important;
+}
+.BackToImgur .headCont:hover a {
+  color: #f0f0f0;
+  cursor: pointer;
+}
+.BackToImgur .cir,
+.BackToImgur .Rect:hover {
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+.BackToImgur > div {
+  width: fit-content;
+  gap: 10px;
+}
+.BackToImgur > div > div:first-child {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5px;
+  justify-content: center;
+  align-items: center;
+}
+.headCont {
+  margin-top: 7px;
+}
+.websiteImg {
+  margin-top: 80px;
+}
+.social-icons {
+  width: 24%;
+  margin: auto;
+}
+.register > div:first-child {
+  margin: 10px;
+  font-size: 12px;
+}
+.register {
+  margin-top: 88px;
+  box-sizing: border-box;
+}
+.apple:hover .apple-logo {
+  fill: black;
+}
+.withImgur {
+  font-size: 11px;
+  letter-spacing: 0.03em;
+  line-height: 20px;
+  color: #fff;
+  gap: 5px;
+  margin: 5px auto;
+}
+.withImgur > div:nth-child(2n + 1) {
+  height: 1px;
+  width: 32%;
+  margin-top: 4px;
+  background-image: linear-gradient(to right, #141518, #818283);
+}
+.withImgur > div:last-child {
+  background-image: linear-gradient(to right, #818283, #141518);
+}
+.credentials {
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 18px !important;
+  padding-bottom: 18px !important;
+  border-radius: 6px;
+}
+.why-verify {
+  font-size: 12px;
+}
+#disclaimer {
+  flex-direction: column;
+}
+.nav-btns {
+  width: 25.6%;
+  margin: auto;
+  display: flex;
+  justify-content: right;
+  padding: 20px 0px;
+  color: white;
+}
+.nav-btns button{
+    background: #636FFF;
+    border: none;
+    display: flex;
+    justify-content:center; 
+    align-items: center;
+    color: white;
+    padding: 12px 35px;
+    border-radius: 2px;
+}
+.nav-btns button:first-child{
+    background:none;
+}
+.footerSection{
+    display: flex;
+    box-sizing: border-box;
+    position: fixed;
+    left: 0%;
+    bottom: 0px;
+    padding: 20px;
+}
+.footerSection div{
+    margin: 10px;
+    font-size: 14px;
+    cursor:pointer;
+}
