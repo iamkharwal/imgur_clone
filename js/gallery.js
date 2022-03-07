@@ -1,5 +1,7 @@
 /** @format */
 let id;
+let show = true;
+const container = document.querySelector(".container");
 const dropDown = document.getElementById("input-dropDown");
 document.querySelector("body").onclick = () => {
   dropDown.style.display = "none";
@@ -36,7 +38,9 @@ document.getElementById("searchBar").addEventListener("keypress", (e) => {
     console.log("showData is here");
     if (e.keyCode === 13) {
       dropDown.style.display = "none";
-      showData(posts);
+      container.innerHTML = "";
+      generateMasonryGrid(5, posts);
+      show = false;
     }
   }, 400);
 });
@@ -66,8 +70,6 @@ function showData(data) {
     posts.push(item);
   });
 }
-
-const container = document.querySelector(".container");
 
 function generateMasonryGrid(columns, posts) {
   container.innerHTML = "";
@@ -194,8 +196,10 @@ let total = 0;
 window.addEventListener(
   "scroll",
   () => {
-    const { scrollTop, scrollHeight, clientHeight, offsetHeight } =
-      document.documentElement;
+    if (!show) {
+      hideLoader();
+      return;
+    }
     if (window.innerHeight + window.pageYOffset >= document.body.offsetHeight) {
       currentPage++;
       console.log("reached", currentPage, limit);
@@ -206,6 +210,8 @@ window.addEventListener(
     passive: true,
   }
 );
+    
+
 
 // initialize
 loadPosts(currentPage, limit);

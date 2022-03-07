@@ -39,15 +39,16 @@
                 </div>
                 <div class="account">
                     <div class="account-div">
-                        <a class="EmeraldButton Button" href="/emerald?source=getAdFreeButtonTopNav">Go Ad-Free</a>
+                        <a class="EmeraldButton Button" href="#">Go Ad-Free</a>
                         <div class="account-icons">
                             <span class="iconify" data-icon="cil:badge"></span>
                             <span class="iconify" data-icon="bx:comment"></span>
                             <span class="iconify" data-icon="fluent:alert-24-regular"></span>
                         </div>
                         <div class="userDetails">
-                            <h4>Hitman</h4>
-                            <img src="./img/userLogo.png" alt="" id="userLogo">
+                            <h4 id="userName" style="text-transform: capitalize;"></h4>
+                            <a class="EmeraldButton Button" style="background-color: red;" href="#"
+                                id="logout">Logout</a>
                         </div>
                     </div>
                 </div>
@@ -136,6 +137,17 @@
     </div>
     <!-- <script type="module" src="items.js"></script> -->
 
+    <script>
+        let user = JSON.parse(localStorage.getItem("currUser"));
+        if (!user) {
+            window.location.href = "./signIn.html"
+        }
+        document.getElementById("userName").textContent = user.username;
+        document.getElementById("logout").addEventListener("click", () => {
+            localStorage.setItem("currUser", null);
+            window.location.href = "./signIn.html"
+        })
+    </script>
     <script src="./js/gallery.js"></script>
 
 </body>

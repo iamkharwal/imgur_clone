@@ -10,6 +10,9 @@
   font-family: "supply";
   color: rgb(255, 255, 255);
 }
+body{
+   background-color: #2f3035;
+}
 
 .blue {
   color: #aed8ea;
@@ -129,6 +132,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   gap: 10px;
+  position: relative;
 }
 #userLogo {
   width: 37px;

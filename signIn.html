@@ -56,7 +56,7 @@
     </div>
   </div>
   <div class="credentials flex signin-container core-dark core-shadow">
-    <input type="text" placeholder="Username or Email" class="br5 lvl1-dark last" />
+    <input type="text" placeholder="Username or Email" class="br5 lvl1-dark last" id="username" />
     <p class="password">
       <input title="" type="password" tabindex="6" name="password" maxlength="255" id="password"
         class="br5 last lvl1-dark valid placeholder" placeholder="Password" />
@@ -66,7 +66,7 @@
   </div>
   <div class="nav-btns">
     <button><a href="/signUp.html">need an accound?</a></button>
-    <button>Sign In</button>
+    <button id="login">Sign In</button>
   </div>
   <div class="footerSection">
     <div>terms</div>
@@ -75,4 +75,10 @@
 </body>
 
 </html>
-<script src="./imgUr.js"></script>
+ <script>
+   let user = JSON.parse(localStorage.getItem("currUser"));
+   if (user) {
+     window.location.href = "./index.html"
+   }
+ </script>
+ <script src="./js/login.js"></script>

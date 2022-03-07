@@ -54,10 +54,10 @@
     </div>
   </div>
   <div class="credentials flex signin-container core-dark core-shadow">
-    <input type="text" placeholder="Username" class="br5 lvl1-dark last" />
-    <input type="text" placeholder="Email" class="br5 lvl1-dark last" />
-    <input type="password" placeholder="Password" class="br5 lvl1-dark last" />
-    <input type="password" placeholder="Retype Password" class="br5 lvl1-dark last" />
+    <input type="text" placeholder="Username" class="br5 lvl1-dark last" id="username" />
+    <input type="text" placeholder="Email" class="br5 lvl1-dark last" id="email" />
+    <input type="password" placeholder="Password" class="br5 lvl1-dark last" id="password" />
+    <input type="password" placeholder="Retype Password" class="br5 lvl1-dark last" id="cpassword" />
     <div class="intl-tel-input allow-dropdown">
       <div class="flag-container">
         <div class="selected-flag" role="combobox" aria-owns="country-listbox" tabindex="0" title="India (भारत): +91">
@@ -74,7 +74,7 @@
   </div>
   <div class="nav-btns">
     <button><a href="/signIn.html">Sign In</a></button>
-    <button>Next</button>
+    <button id="register">Next</button>
   </div>
   <div class="footerSection">
     <div>terms</div>
@@ -83,4 +83,10 @@
 </body>
 
 </html>
-<script src="./imgUr.js"></script>
+ <script>
+   let user = JSON.parse(localStorage.getItem("currUser"));
+   if (user) {
+     window.location.href = "./index.html"
+   }
+ </script>
+ <script src="./js/register.js"></script>
